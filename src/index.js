@@ -7,11 +7,13 @@ import App from './App';
 import enTranslations from './langs/en.json';
 import zhTranslations from './langs/zh.json';
 import jaTranslations from './langs/ja.json';
+import ptTranslations from './langs/pt.json';
 
 const staticTranslations = {
   en: enTranslations,
   zh: zhTranslations,
-  ja: jaTranslations
+  ja: jaTranslations,
+  pt: ptTranslations
 };
 
 // =============================================================================
@@ -55,6 +57,12 @@ export const SUPPORTED_LANGUAGES = {
     name: 'Korean',
     nativeName: '한국어',
     flag: '🇰🇷'
+  },
+  pt: {
+    code: 'pt',
+    name: 'Portuguese',
+    nativeName: 'Português',
+    flag: '🇧🇷'
   }
 };
 

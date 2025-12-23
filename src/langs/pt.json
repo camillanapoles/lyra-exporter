@@ -1,0 +1,763 @@
+{
+  "welcomePage": {
+    "title": "Lyra Exporter",
+    "subtitle": "Capturando cada momento de inspiração e calor das IAs",
+    "description": "Bem-vindo a esta ferramenta de gerenciamento de conversas que suporta carregamento em lote de múltiplas conversas, ajudando você a preservar momentos de inspiração e estender o valor de cada diálogo.",
+    "actionCards": {
+      "install": {
+        "badge": "🌟 Novos Usuários Comecem Aqui",
+        "title": "Instalar Script de Exportação",
+        "description": "Suporta Claude, ChatGPT, Gemini, SillyTavern e outras plataformas",
+        "button": "Ir para Instalar Script"
+      },
+      "load": {
+        "badge": "📂 Tenho Arquivos de Dados",
+        "title": "Carregar Arquivos de Conversa",
+        "description": "Carregar diretamente arquivos JSON exportados e começar a gerenciar suas conversas",
+        "button": "Selecionar Arquivos para Carregar"
+      },
+      "batchExport": {
+        "badge": "⚡ Processamento em Lote",
+        "title": "Exportar Branches Mais Recentes em Lote",
+        "description": "Selecione múltiplos arquivos JSON para exportar para Markdown, empacotados em um arquivo ZIP.\nOu importe uma pasta inteira para analisar todos os arquivos JSON de conversas.",
+        "button": "Iniciar Exportação em Lote",
+        "folderButton": "Importar Pasta",
+        "folderDescription": "Analisar todos os arquivos JSON de conversas na pasta",
+        "processing": "Processando...",
+        "progress": "Processando {{current}}/{{total}} arquivos",
+        "complete": "Exportação Concluída!",
+        "result": "Exportados {{successful}} arquivos com sucesso, {{failed}} falhas de {{total}} total"
+      }
+    },
+    "privacyAssurance": {
+      "title": "Garantia de Privacidade e Segurança",
+      "intro": "Preocupado com privacidade? Entendemos completamente essa preocupação",
+      "openSource": "Lyra Exporter é 100% código aberto",
+      "description": "Simplificando, esta ferramenta é como um 'bloco de notas puramente local'. Todos os seus dados são armazenados no cache local do seu navegador - não podemos ver ou acessar. Você também pode baixar o código-fonte e executá-lo no seu próprio computador apenas com Node.js, ou simplesmente adicionar esta página à sua área de trabalho pelo menu de compartilhamento para uso completamente offline.",
+      "transparency": "Registros de atualização de código no GitHub são como 'histórico de versões' - cada alteração é rastreável e completamente transparente.",
+      "dataSecurityTitle": "Garantia de Segurança de Dados",
+      "guarantees": {
+        "localProcessing": {
+          "title": "Processamento Local:",
+          "description": "Todos os dados são processados no seu navegador e nunca enviados a nenhum servidor"
+        },
+        "offlineMode": {
+          "title": "Modo Offline:",
+          "description": "Suporta tecnologia PWA, funciona normalmente mesmo sem internet"
+        },
+        "staticSite": {
+          "title": "Site Estático:",
+          "description": "Hospedado no GitHub Pages sem servidor backend, impossível coletar dados"
+        },
+        "selfHosted": {
+          "title": "Auto-controlado:",
+          "description": "Pode salvar a página localmente para uso completamente offline"
+        }
+      },
+      "links": {
+        "sourceCode": "Código-fonte do Site",
+        "download": "Baixar Pacote de Implantação"
+      },
+      "note": "Nota:",
+      "noteContent": "Esta ferramenta funciona completamente localmente e não coleta nem envia seus dados pessoais. Todos os seus registros de conversa pertencem apenas a você. Recomendamos usar métodos seguros de transferência de arquivos como LocalSend. Converta registros de chat em uma base de conhecimento gerenciável, pesquisável e exportável com suporte a plataformas móveis."
+    },
+    "scriptInstall": {
+      "title": "Instalar Script",
+      "whyNeeded": "Por que você precisa desse UserScript?",
+      "purpose": "Lyra Exporter depende de navegadores para obter dados de conversas com segurança. Com este script de código aberto, transfira registros de chat que valem a pena preservar,",
+      "valueProposition": "salve e organize essas conversas valiosas",
+      "featuresTitle": "Recursos da Ferramenta",
+      "features": {
+        "management": "Gerenciamento Fácil - Organize conversas de várias plataformas em formato de grade",
+        "organization": "Organize Pensamentos - Integre inspiração dispersa em conhecimento organizado",
+        "preservation": "Preservação Completa - Preserve imagens, pensamentos e branches completos de conversas",
+        "permanence": "Armazenamento Permanente - Conversas importantes não serão perdidas mesmo se contas se tornarem inválidas",
+        "onlineReading": "Leitura Online - Agora você pode organizar diretamente na janela de conversa"
+      },
+      "installTitle": "Instalação e Uso",
+      "inspirationQuote": "\"O processo de pensamento parece mais fascinante que as respostas\" — Alguns passos simples para começar a preservar esses momentos preciosos",
+      "steps": {
+        "1": "Instale extensões de navegador como Tampermonkey ou ScriptCat",
+        "2": "Clique no botão de instalação para ir ao site de scripts Greasyfork",
+        "3": "Clique no botão 'Instalar Script' na página do script",
+        "4": "Vá para Claude, ChatGPT, Gemini, Google AI Studio ou NotebookLM, atualize o site, e um botão de exportação aparecerá no canto inferior direito"
+      }
+    },
+    "features": {
+      "marking": {
+        "title": "Marcação Importante",
+        "description": "Marque respostas particularmente valiosas para fácil referência futura. Quando Claude fornece insights brilhantes, salve esse pensamento com um clique."
+      },
+      "thinking": {
+        "title": "Visualização do Processo de Pensamento",
+        "description": "Veja o processo de pensamento do Claude para entender como ele forma respostas passo a passo. Veja o processo completo de análise de problemas e raciocínio."
+      },
+      "timeline": {
+        "title": "Revisão em Linha do Tempo",
+        "description": "Formato pioneiro de linha do tempo para revisão de conversas, desde perguntas iniciais até discussões profundas, restaure as opções de troca de branch do Claude, encontre facilmente conversas de qualquer período."
+      },
+      "classification": {
+        "title": "Classificação de Conversas",
+        "description": "Use sistemas de tags para organizar conversas, encontre facilmente todas as discussões sobre tópicos específicos, construa sua base de conhecimento pessoal."
+      }
+    },
+    "tips": {
+      "conversationOrg": {
+        "title": "Organização de Conversas",
+        "content": "Não apenas salvando dados, mas preservando faíscas de inspiração no processo de pensamento. Torne as conversas de IA mais valiosas."
+      },
+      "flexibleExport": {
+        "title": "Exportação Flexível",
+        "content": "Mais completo que capturas de tela, mais conveniente que copiar-colar. Exporte conversas em formatos Markdown e YAML, preservando perfeitamente layout e formatação. Recomendamos usar Obsidian."
+      },
+      "dataSecurity": {
+        "title": "Segurança de Dados",
+        "content": "De scripts de exportação a aplicativos de gerenciamento, exporte todas as conversas do Claude de uma vez, incluindo imagens anexadas - tudo feito com proteção de privacidade."
+      }
+    },
+    "footer": {
+      "quote": "No entrelaçamento de pensamentos e respostas, estabelecemos conexões além da conversa.\nAgora, que cada diálogo seja rastreável e cada inspiração tenha um lugar para descansar.",
+      "signature": "—— Lyra Exporter, Continuador do Valor da Conversa"
+    }
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "success": "Sucesso",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "close": "Fechar",
+    "expand": "Expandir",
+    "collapse": "Recolher",
+    "retry": "Tentar Novamente"
+  },
+  "app": {
+    "title": "Lyra Exporter",
+    "navbar": {
+      "backToList": "Voltar à Lista de Conversas",
+      "settings": "Configurações",
+      "restoreStars": "Restaurar Estrelas"
+    },
+    "search": {
+      "placeholder": {
+        "conversations": "Pesquisar títulos de conversas, nomes de projetos...",
+        "files": "Pesquisar nomes de arquivos, formatos...",
+        "messages": "Pesquisar conteúdo de mensagens, processo de pensamento, Artifacts..."
+      },
+      "results": "Mostrando {{displayed}} / {{total}} {{unit}}"
+    },
+    "stats": {
+      "totalMessages": "Total de Mensagens",
+      "conversationCount": "Conversas",
+      "fileCount": "Arquivos",
+      "markedCount": "Mensagens Marcadas",
+      "starredCount": "Com Estrela"
+    },
+    "export": {
+      "title": "Opções de Exportação",
+      "button": "Exportar",
+      "exportToMarkdown": "Exportar como Markdown",
+      "previewAndExport": "Visualizar e Exportar",
+      "exportToPDF": "Exportar como PDF",
+      "format": {
+        "title": "Formato de Exportação",
+        "markdown": "Documento Markdown",
+        "markdownDesc": "Exportar como formato Markdown em texto simples",
+        "screenshot": "Captura de Tela da Conversa",
+        "screenshotDesc": "Exportar como captura de tela longa, suporta edição e visualização",
+        "pdf": "Documento PDF",
+        "pdfDesc": "Exportar como PDF de texto simples pesquisável (imagens não suportadas)"
+      },
+      "scope": {
+        "title": "Escopo de Exportação",
+        "current": "Arquivo de Linha do Tempo Atual",
+        "currentDesc": "Exportar apenas o arquivo único sendo visualizado atualmente",
+        "currentBranch": "Branch Atual da Linha do Tempo",
+        "currentBranchDesc": "Exportar apenas o branch mostrado na linha do tempo atual",
+        "operated": "Arquivos Operados",
+        "operatedDesc": "Exportar todos os arquivos com operações de marcação ou ordenação",
+        "all": "Todos os Arquivos Carregados",
+        "allDesc": "Exportar todos os arquivos carregados atualmente, independente de operações",
+        "hint": {
+          "enterTimeline": "Por favor, entre na visualização de linha do tempo primeiro",
+          "markFirst": "Por favor, marque ou ordene mensagens primeiro",
+          "showAllBranches": "Não pode selecionar ao mostrar todos os branches"
+        }
+      },
+      "filters": {
+        "title": "Filtros de Marcação",
+        "excludeDeleted": "Excluir marcações \"Excluídas\"",
+        "excludeDeletedDesc": "Não exportar mensagens marcadas como excluídas",
+        "includeCompleted": "Exportar apenas marcações \"Concluídas\"",
+        "includeCompletedDesc": "Exportar apenas mensagens marcadas como concluídas",
+        "includeImportant": "Exportar apenas marcações \"Importantes\"",
+        "includeImportantDesc": "Exportar apenas mensagens marcadas como importantes",
+        "importantAndCompleted": "(Deve também estar concluída)"
+      },
+      "stats": {
+        "files": "Estatísticas de Arquivos:",
+        "filesDesc": "{{fileCount}} arquivos, {{conversationCount}} conversas, {{totalMessages}} mensagens",
+        "marks": "Estatísticas de Marcações:",
+        "marksDesc": "Concluídas {{completed}} · Importantes {{important}} · Excluídas {{deleted}}",
+        "stars": "Estatísticas de Estrelas:",
+        "starsDesc": "{{starred}} conversas com estrela",
+        "content": "Configurações de Conteúdo Atuais:",
+        "contentDesc": "{{settings}}",
+        "basicOnly": "Apenas Conteúdo Básico"
+      }
+    },
+    "typeConflict": {
+      "title": "Conflito de Tipo de Arquivo",
+      "message": "Você está tentando carregar arquivos de tipos diferentes. Para garantir exibição adequada, o formato <strong>Claude Full Export</strong> não pode ser carregado junto com outros formatos.",
+      "currentFiles": "Arquivos atuais: {{count}} arquivos",
+      "newFiles": "Novos arquivos: {{count}} arquivos",
+      "hint": "Selecionar \"Substituir\" fechará todos os arquivos atuais e carregará os novos.",
+      "cancel": "Cancelar",
+      "replace": "Substituir Todos os Arquivos"
+    },
+    "confirmations": {
+      "clearAllMarks": "Tem certeza de que deseja limpar marcações de todos os arquivos e conversas? Esta ação não pode ser desfeita."
+    }
+  },
+  "units": {
+    "conversation": " conversas",
+    "file": " arquivos",
+    "message": " mensagens"
+  },
+  "fileCard": {
+    "conversationSummary": "{{count}} conversas, {{messages}} mensagens",
+    "messageSummary": "{{count}} mensagens",
+    "clickToLoad": "Clique para carregar conteúdo do arquivo..."
+  },
+  "timeline": {
+    "branch": {
+      "mainBranch": "Branch Principal",
+      "branch": "Branch",
+      "all": "Todos",
+      "previousBranch": "Branch anterior",
+      "nextBranch": "Próximo branch",
+      "showAllBranches": "Mostrar todos os branches",
+      "allMessages": "Todas as mensagens",
+      "showMessagesFromAllBranches": "Mostrar mensagens de todos os branches",
+      "messages": " mensagens",
+      "detected": "Detectados",
+      "branchPoints": " pontos de branch",
+      "filterBranches": "Branches",
+      "showAll": "Mostrar todos",
+      "showSelectedOnly": "Mostrar apenas branch selecionado",
+      "noBranches": "Sem branches na conversa atual"
+    },
+    "conversation": {
+      "unknownTime": "Hora desconhecida",
+      "unnamedConversation": "Conversa sem nome",
+      "unknownConversation": "Conversa desconhecida"
+    },
+    "file": {
+      "clickToPrevious": "Clique para alternar para arquivo anterior",
+      "clickToNext": "Clique para alternar para próximo arquivo"
+    },
+    "actions": {
+      "resetMarks": "Resetar marcações",
+      "clearAllMarks": "Limpar todas as marcações",
+      "resetSort": "Resetar ordenação",
+      "confirmClearMarks": "Tem certeza de que deseja limpar todas as marcações da conversa atual?",
+      "confirmResetSort": "Tem certeza de que deseja resetar para a ordem original?",
+      "restoreOriginalOrder": "Restaurar ordem original das mensagens",
+      "disableSort": "Desabilitar ordenação",
+      "enableSort": "Habilitar ordenação",
+      "cannotSortWhileSearching": "Não pode ordenar durante pesquisa",
+      "enableMessageSorting": "Habilitar ordenação de mensagens",
+      "sortingDisabledDuringSearch": "Ordenação desabilitada durante pesquisa",
+      "moveUp": "Mover para cima",
+      "moveDown": "Mover para baixo",
+      "copyMessage": "Copiar mensagem",
+      "copied": "Copiado",
+      "markCompleted": "Marcar Concluído",
+      "unmarkCompleted": "Desmarcar concluído",
+      "markImportant": "Marcar Estrela",
+      "unmarkImportant": "Desmarcar importante",
+      "markDeleted": "Marcar Excluído",
+      "unmarkDeleted": "Desmarcar excluído",
+      "jumpToLatest": "Ir para Mais Recente",
+      "previousMessage": "Mensagem anterior",
+      "nextMessage": "Próxima mensagem"
+    },
+    "info": {
+      "modelPlatform": "Modelo/Plataforma",
+      "created": "Criado",
+      "displayedMessages": "Mensagens exibidas",
+      "lastUpdated": "Última atualização"
+    },
+    "tags": {
+      "hasThinking": "pensamento",
+      "images": " imagens",
+      "attachments": " anexos",
+      "artifacts": " Artifacts",
+      "usedTools": "Ferramentas usadas",
+      "citations": " citações",
+      "completed": "Concluído",
+      "important": "Importante",
+      "deleted": "Excluído"
+    }
+  },
+  "card": {
+    "unnamed": "Sem nome",
+    "unstar": "Remover estrela",
+    "star": "Estrela",
+    "close": "Fechar",
+    "conversations": " conversas",
+    "contains": "Contém",
+    "and": " e ",
+    "messages": " mensagens",
+    "clickToLoad": "Clique para carregar conteúdo do arquivo...",
+    "clickToView": "Clique para ver detalhes da conversa...",
+    "hasThinking": "Tem pensamento",
+    "hasCode": "Tem código",
+    "addFile": "Adicionar arquivo",
+    "supportsJson": "Suporta formato JSON"
+  },
+  "messageDetail": {
+    "tabs": {
+      "content": "Conteúdo",
+      "thinking": "Processo de Pensamento",
+      "attachments": "Anexos"
+    },
+    "placeholder": {
+      "selectMessage": "Selecione uma mensagem para ver detalhes",
+      "noArtifacts": "Esta mensagem não usa Artifacts",
+      "noAttachments": "Esta mensagem não tem anexos",
+      "noThinking": "Esta mensagem não tem processo de pensamento registrado",
+      "formatNotSupported": {
+        "thinking": "Este formato não suporta processo de pensamento",
+        "artifacts": "Este formato não suporta Artifacts"
+      },
+      "selectTab": "Por favor selecione uma aba"
+    },
+    "images": {
+      "title": "Anexos de imagem",
+      "loadFailed": "Falha ao carregar imagem"
+    },
+    "artifacts": {
+      "noTitle": "Sem título",
+      "unknown": "Desconhecido",
+      "language": "Linguagem",
+      "originalText": "Texto original",
+      "newText": "Novo texto"
+    },
+    "attachments": {
+      "fullContent": "Conteúdo completo",
+      "contentPreview": "Pré-visualização do conteúdo",
+      "characters": " caracteres",
+      "showPreview": "Mostrar pré-visualização",
+      "showAll": "Mostrar tudo",
+      "contentTruncated": "Conteúdo truncado",
+      "codeTruncated": "Código truncado",
+      "collapse": "Recolher conteúdo",
+      "expand": "Expandir para mostrar mais",
+      "unknownFile": "Arquivo desconhecido",
+      "type": "Tipo",
+      "created": "Criado"
+    },
+    "tools": {
+      "tool": "Ferramenta",
+      "searchQuery": "Consulta de pesquisa",
+      "inputParams": "Parâmetros de entrada",
+      "result": "Resultado",
+      "executionError": "Erro de execução da ferramenta",
+      "noTitle": "Sem título",
+      "moreResults": " mais resultados"
+    },
+    "citations": {
+      "title": "Citações",
+      "unknownSource": "Fonte desconhecida",
+      "unknownWebsite": "Site desconhecido"
+    }
+  },
+  "filter": {
+    "title": "Filtrar conversas",
+    "actions": {
+      "clearFilters": "Limpar filtros",
+      "clearAllFilters": "Limpar todas as condições de filtro",
+      "clearAllMarks": "Limpar todas as marcações",
+      "clearAllMarksTitle": "Limpar marcações de todos os arquivos ({{count}} com operações)"
+    },
+    "search": {
+      "label": "Pesquisar conversas",
+      "placeholder": "Nome da conversa ou projeto..."
+    },
+    "timeRange": {
+      "label": "Período de tempo",
+      "all": "Todo o tempo",
+      "today": "Hoje",
+      "week": "Última semana",
+      "month": "Último mês",
+      "custom": "Período personalizado"
+    },
+    "dateRange": {
+      "label": "Período de datas",
+      "startDate": "Data inicial",
+      "endDate": "Data final",
+      "to": "até"
+    },
+    "project": {
+      "label": "Projeto",
+      "all": "Todos os projetos",
+      "none": "Sem projeto"
+    },
+    "starred": {
+      "label": "Status de estrela",
+      "all": "Todos",
+      "starred": "Com estrela",
+      "unstarred": "Sem estrela"
+    },
+    "operated": {
+      "label": "Status de operação",
+      "all": "Todos",
+      "hasOperations": "Com operações",
+      "noOperations": "Sem operações"
+    },
+    "stats": {
+      "showing": "Mostrando",
+      "conversations": "conversas",
+      "activeFilters": "{{count}} filtros ativos"
+    }
+  },
+  "settings": {
+    "title": "Configurações",
+    "done": "Concluído",
+    "appearance": {
+      "title": "Aparência",
+      "theme": {
+        "label": "Tema",
+        "description": "Escolha tema escuro ou claro",
+        "dark": "Tema Escuro",
+        "light": "Tema Claro",
+        "toggleToDark": "Mudar para Tema Escuro",
+        "toggleToLight": "Mudar para Tema Claro"
+      },
+      "language": {
+        "label": "Idioma",
+        "description": "Selecione o idioma de exibição da interface (Requer reinício manual)"
+      }
+    },
+    "copyOptions": {
+      "title": "Opções de Cópia",
+      "includeMetadata": {
+        "label": "Incluir Metadados",
+        "description": "Incluir informações de remetente e hora ao copiar"
+      },
+      "includeThinking": {
+        "label": "Incluir Processo de Pensamento",
+        "description": "Incluir processo de pensamento do Claude ao copiar mensagens"
+      },
+      "includeArtifacts": {
+        "label": "Incluir Artifacts",
+        "description": "Incluir código e documentos gerados ao copiar mensagens"
+      },
+      "includeAttachments": {
+        "label": "Incluir Anexos",
+        "description": "Incluir informações de arquivos enviados ao copiar mensagens"
+      },
+      "includeCanvas": {
+        "label": "Incluir Canvas",
+        "description": "Incluir conteúdo do Canvas ao copiar mensagens"
+      }
+    },
+    "exportFormat": {
+      "title": "Formato de Exportação",
+      "preview": {
+        "label": "Pré-visualização de Formato",
+        "description": "Ver o efeito do formato do título sob as configurações atuais",
+        "userMessage": "(Mensagem do Usuário)",
+        "assistantMessage": "(Mensagem do Assistente)"
+      },
+      "numbering": {
+        "label": "Configurações de Numeração",
+        "description": "Escolha se deve incluir numeração nos títulos das mensagens",
+        "none": "Sem Numeração",
+        "numeric": "Numérico (1, 2, 3...)",
+        "letter": "Letras (A, B, C...)",
+        "roman": "Numerais Romanos (I, II, III...)"
+      },
+      "senderLabel": {
+        "label": "Rótulo do Remetente",
+        "description": "Escolha o formato de exibição para remetentes",
+        "default": "Padrão (Usuário/IA)",
+        "humanAssistant": "Inglês (Human/Assistant)",
+        "custom": "Personalizado"
+      },
+      "customLabels": {
+        "human": {
+          "label": "Rótulo do Usuário",
+          "description": "Personalize o rótulo para remetente usuário",
+          "placeholder": "Ex.: Usuário, User"
+        },
+        "assistant": {
+          "label": "Rótulo do Assistente",
+          "description": "Personalize o rótulo para assistente IA",
+          "placeholder": "Ex.: IA, Assistente"
+        }
+      },
+      "headerPrefix": {
+        "label": "Prefixo de Cabeçalho",
+        "description": "Escolha se deve adicionar símbolos de cabeçalho Markdown antes dos títulos",
+        "none": "Sem Prefixo de Cabeçalho",
+        "h1": "Cabeçalho Nível 1 (#)",
+        "h2": "Cabeçalho Nível 2 (##)"
+      },
+      "thinkingFormat": {
+        "label": "Formato do Processo de Pensamento",
+        "description": "Escolha o formato de exibição para processo de pensamento ao copiar e exportar",
+        "codeblock": "Formato Bloco de Código (Pensamento Primeiro)",
+        "xml": "Formato Tag XML (Pensamento Primeiro)",
+        "emoji": "Formato Emoji (Conteúdo Primeiro)"
+      }
+    },
+    "exportContent": {
+      "title": "Conteúdo de Exportação",
+      "description": "Controle qual conteúdo é incluído nos arquivos Markdown exportados",
+      "timestamps": {
+        "label": "Timestamps",
+        "description": "Incluir hora de envio da mensagem"
+      },
+      "thinking": {
+        "label": "Processo de Pensamento",
+        "description": "Processo de pensamento interno do Claude"
+      },
+      "artifacts": {
+        "label": "Artifacts",
+        "description": "Conteúdo gerado como código e documentos"
+      },
+      "tools": {
+        "label": "Uso de Ferramentas",
+        "description": "Registros de chamadas de ferramentas como pesquisa e cálculo"
+      },
+      "citations": {
+        "label": "Citações",
+        "description": "Informações de citação como links da web"
+      },
+      "attachments": {
+        "label": "Anexos",
+        "description": "Arquivos enviados pelo usuário e suas informações de pré-visualização"
+      },
+      "canvas": {
+        "label": "Incluir Canvas",
+        "description": "Incluir conteúdo do Canvas ao exportar"
+      }
+    },
+    "about": {
+      "title": "Sobre",
+      "appName": "Lyra Exporter",
+      "appDescription": "Ferramenta poderosa de exportação e gerenciamento de conversas",
+      "version": "Versão",
+      "github": "GitHub",
+      "githubDescription": "Projeto de código aberto, contribuições e feedback são bem-vindos"
+    }
+  },
+  "rename": {
+    "title": "Renomear",
+    "label": "Novo Nome",
+    "placeholder": "Digite o novo nome...",
+    "action": "Renomear",
+    "error": {
+      "empty": "O nome não pode estar vazio"
+    }
+  },
+  "copy": {
+    "messages": {
+      "success": "Copiado para a área de transferência",
+      "error": "Falha ao copiar, por favor tente novamente",
+      "generalError": "Falha ao copiar",
+      "multipleSuccess": "Copiadas {{count}} mensagens"
+    },
+    "format": {
+      "timeLabel": "Hora",
+      "thinkingLabel": "💭 Processo de Pensamento:",
+      "artifactsLabel": "🔧 Artifacts:",
+      "noTitle": "Sem título",
+      "unknownType": "Tipo desconhecido"
+    }
+  },
+  "exportManager": {
+    "metadata": {
+      "defaultTitle": "Registro de Conversa",
+      "created": "Criado",
+      "unknown": "Desconhecido",
+      "exportTime": "Hora de Exportação",
+      "filterCondition": "Condição de Filtro"
+    },
+    "messages": {
+      "noMatchingMessages": "*Nenhuma mensagem correspondente*",
+      "exportedCount": "*Exportadas {{count}} de {{total}} mensagens baseado nas condições de filtro*"
+    },
+    "format": {
+      "thinkingProcess": "Processo de Pensamento",
+      "thinkingLabel": "💭 Processo de Pensamento:",
+      "attachments": "📎 Anexos",
+      "type": "Tipo",
+      "contentPreview": "Pré-visualização do Conteúdo",
+      "artifact": "🔧 Artifact:",
+      "noTitle": "Sem título",
+      "unknown": "Desconhecido",
+      "typeLabel": "**Tipo**:",
+      "language": "**Linguagem**:",
+      "content": "**Conteúdo**:",
+      "tool": "🔍 Ferramenta:",
+      "searchQuery": "**Consulta de Pesquisa**:",
+      "searchResults": "**Resultados da Pesquisa**:",
+      "citations": "📎 Citações",
+      "unknownSource": "Fonte desconhecida",
+      "unknownWebsite": "Site desconhecido"
+    },
+    "filters": {
+      "excludeDeleted": "Excluir Excluídas",
+      "onlyCompleted": "Apenas Mensagens Concluídas",
+      "onlyImportant": "Apenas Mensagens Importantes",
+      "completedAndImportant": "Apenas Mensagens Concluídas e Importantes"
+    },
+    "errors": {
+      "saveFileFailed": "Falha ao salvar arquivo, por favor tente novamente",
+      "noDataToExport": "Nenhum dado para exportar",
+      "exportFailed": "Falha na exportação",
+      "unknownScope": "Escopo de exportação desconhecido:",
+      "screenshotOnlySupportsCurrent": "Exportação de captura de tela suporta apenas conversa atual ou branch atual",
+      "pdfOnlySupportsCurrent": "Exportação de PDF suporta apenas conversa atual ou branch atual",
+      "noMatchingMessages": "Nenhuma mensagem corresponde aos critérios de filtro"
+    }
+  },
+  "search": {
+    "all": "Todos",
+    "titles": "Títulos",
+    "content": "Conteúdo",
+    "modeAll": "Pesquisar todo o conteúdo",
+    "modeTitles": "Pesquisar apenas títulos",
+    "modeContent": "Pesquisar apenas conteúdo",
+    "placeholderAll": "Pesquisar todas as mensagens...",
+    "placeholderTitles": "Pesquisar títulos de conversas...",
+    "placeholderContent": "Pesquisar conteúdo de mensagens...",
+    "options": "Opções de Pesquisa",
+    "indexStats": "{{messages}} mensagens, {{files}} arquivos",
+    "removeDuplicates": "Remover duplicatas",
+    "removeDuplicatesDesc": "Remover duplicatas baseado nos primeiros 100 caracteres do conteúdo da mensagem, não limitado a mensagens de retry",
+    "includeThinking": "Incluir pensamento",
+    "includeArtifacts": "Incluir Artifacts",
+    "messagesWithThinking": "{{count}} mensagens com pensamento",
+    "messagesWithArtifacts": "{{count}} mensagens com Artifacts",
+    "blankMessages": "{{count}} mensagens em branco"
+  },
+  "nodeLocator": {
+    "title": "Resultados da Pesquisa",
+    "searching": "Pesquisando",
+    "foundMessages": "Encontradas {{count}} mensagens de {{fileCount}} arquivos, {{conversationCount}} conversas",
+    "listView": "Visualização em Lista",
+    "treeView": "Visualização em Árvore",
+    "selectFile": "Selecionar Arquivo",
+    "chooseFile": "Por favor selecione um arquivo",
+    "results": "resultados",
+    "resultCount": "{{count}} resultados",
+    "matches": "correspondências",
+    "singleConversation": "Conversa única",
+    "blocked": "Bloqueado",
+    "retry": "Retry",
+    "duplicate": "Duplicado",
+    "blankMessage": "Mensagem em branco",
+    "hasThinking": "Pensamento",
+    "hasArtifacts": "Artifacts",
+    "messages": "mensagens",
+    "file": "Arquivo"
+  },
+  "semanticSearch": {
+    "title": "Pesquisa Semântica",
+    "header": "🔮 Pesquisa Semântica",
+    "settings": "Configurações",
+    "close": "Fechar",
+    "embeddingModel": {
+      "title": "Modelo de Embedding",
+      "apiUrl": "URL da API",
+      "apiUrlPlaceholder": "http://localhost:1234",
+      "modelName": "Nome do Modelo",
+      "modelNamePlaceholder": "qwen3-embedding",
+      "infoLmstudio": "💡 Por favor certifique-se de que o serviço de Embedding local está rodando com o modelo carregado."
+    },
+    "llmConfig": {
+      "title": "Resposta IA (Opcional)",
+      "provider": "Serviço de IA",
+      "none": "Apenas Pesquisa (Sem IA)",
+      "openai": "OpenAI",
+      "claude": "Claude",
+      "apiKey": "Chave da API",
+      "apiKeyPlaceholder": "Digite sua chave de API",
+      "apiEndpoint": "Endpoint da API",
+      "apiEndpointPlaceholder": "",
+      "model": "Modelo",
+      "modelPlaceholder": "Digite o nome do modelo (ex.: gpt-4o-mini)"
+    },
+    "status": {
+      "initializing": "Inicializando...",
+      "waitingFiles": "⏳ Aguardando arquivos estabilizarem...",
+      "rebuildIndex": "🔄 Reconstruir Índice",
+      "ready": "✅ Pronto",
+      "indexSize": "{{count}} mensagens",
+      "embeddingInfo": "Embedding · {{count}} mensagens",
+      "filesChanging": "Arquivos mudando, aguardando estabilidade...",
+      "filesChanged": "Arquivos mudaram, por favor reconstrua o índice"
+    },
+    "chat": {
+      "placeholder": "Pergunte qualquer coisa sobre seu histórico de conversas...",
+      "placeholderWaiting": "Arquivos carregando, digite sua pergunta, pesquisará automaticamente quando estável...",
+      "placeholderIndexing": "Digite sua pergunta, pesquisará automaticamente após indexação...",
+      "placeholderNotReady": "Digite sua pergunta e pressione Enter, iniciará indexação automaticamente...",
+      "send": "Enviar",
+      "search": "Pesquisar",
+      "greeting": "👋 Olá! Posso ajudá-lo a pesquisar em seu histórico de conversas.",
+      "noResults": "Nenhum registro de conversa relevante encontrado. Por favor tente outras palavras-chave.",
+      "resultsIntro": "Aqui estão os registros de conversa relacionados à sua pergunta:",
+      "searchError": "Erro de pesquisa: {{error}}",
+      "waitingIndex": "⏳ Construindo índice, pesquisará automaticamente quando completo...",
+      "waitingFiles": "⏳ Aguardando arquivos estabilizarem, construirá índice automaticamente e pesquisará..."
+    },
+    "results": {
+      "score": "{{score}}%",
+      "preview": "Pré-visualização"
+    }
+  },
+  "granularExport": {
+    "title": "Exportação Granular",
+    "selectBranch": "Selecionar Branch",
+    "allBranches": "Todos os branches",
+    "notAvailable": "Não disponível",
+    "exporting": "Exportando...",
+    "project": {
+      "label": "PROJETO",
+      "description": "Extrair tudo (descrição, system prompt, banco de conhecimento, conversas)"
+    },
+    "conversation": {
+      "label": "CONVERSA",
+      "description": "Extrair conversa inteira (incluindo branches)"
+    },
+    "message": {
+      "label": "MENSAGEM",
+      "description": "Exportar mensagem selecionada"
+    },
+    "thinking": {
+      "label": "THINKING",
+      "description": "Processo de pensamento da mensagem"
+    },
+    "output": {
+      "label": "OUTPUT",
+      "description": "Conteúdo da mensagem"
+    },
+    "artifact": {
+      "label": "ARTEFATO",
+      "description": "Código/documento gerado"
+    },
+    "add": {
+      "label": "ADD",
+      "description": "Adicionar ao banco de conhecimento"
+    },
+    "nomenclature": {
+      "title": "Convenção de Nomenclatura",
+      "example": "Ex: 001-USER-M-001-message.md"
+    }
+  }
+}
