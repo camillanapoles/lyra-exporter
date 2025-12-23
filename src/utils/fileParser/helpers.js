@@ -102,11 +102,6 @@ export const DateTimeUtils = {
     }
     try {
       const date = new Date(dateStr);
-      // 检查日期是否有效
-      if (isNaN(date.getTime())) {
-        const locale = localeCache.get();
-        return locale.startsWith('zh') ? '未知时间' : 'Unknown time';
-      }
       const locale = localeCache.get();
       return date.toLocaleDateString(locale, {
         year: 'numeric',
@@ -114,8 +109,7 @@ export const DateTimeUtils = {
         day: 'numeric'
       });
     } catch {
-      const locale = localeCache.get();
-      return locale.startsWith('zh') ? '未知时间' : 'Unknown time';
+      return dateStr;
     }
   },
 
@@ -123,8 +117,6 @@ export const DateTimeUtils = {
     if (!timestamp) return '';
     try {
       const date = new Date(timestamp);
-      // 检查日期是否有效
-      if (isNaN(date.getTime())) return '';
       const locale = localeCache.get();
       return date.toLocaleTimeString(locale, {
         hour: '2-digit',
@@ -132,7 +124,7 @@ export const DateTimeUtils = {
         second: '2-digit'
       });
     } catch {
-      return '';
+      return timestamp;
     }
   },
 
@@ -143,11 +135,6 @@ export const DateTimeUtils = {
     }
     try {
       const date = new Date(timestamp);
-      // 检查日期是否有效
-      if (isNaN(date.getTime())) {
-        const locale = localeCache.get();
-        return locale.startsWith('zh') ? '未知时间' : 'Unknown time';
-      }
       const locale = localeCache.get();
       return date.toLocaleString(locale, {
         year: 'numeric',
@@ -157,8 +144,7 @@ export const DateTimeUtils = {
         minute: '2-digit'
       });
     } catch {
-      const locale = localeCache.get();
-      return locale.startsWith('zh') ? '未知时间' : 'Unknown time';
+      return timestamp;
     }
   },
 
